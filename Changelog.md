@@ -1,5 +1,7 @@
 ### Development
 
+* Drop support for Ruby < 2.3. (Phil Pirozhkov, #2787)
+
 Enhancements:
 
 * Improve pluralisation of words ending with `s` (like process). (Joshua Pinter, #2779)
