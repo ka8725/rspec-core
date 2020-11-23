@@ -92,17 +92,4 @@ RSpec.configure do |c|
   c.around(:example, :simulate_shell_allowing_unquoted_ids) do |ex|
     with_env_vars('SHELL' => '/usr/local/bin/bash', &ex)
   end
-
-  c.filter_run_excluding :ruby => lambda {|version|
-    case version.to_s
-    when "!jruby"
-      RUBY_ENGINE == "jruby"
-    when /^> (.*)/
-      !(RUBY_VERSION.to_s > $1)
-    else
-      !(RUBY_VERSION.to_s =~ /^#{version.to_s}/)
-    end
-  }
-
-  $original_rspec_configuration = c
 end
