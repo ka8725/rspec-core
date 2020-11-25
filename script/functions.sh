@@ -12,8 +12,8 @@ SPECS_HAVE_RUN_FILE=specs.out
 MAINTENANCE_BRANCH=`cat maintenance-branch`
 
 # Don't allow rubygems to pollute what's loaded. Also, things boot faster
-# without the extra load time of rubygems. Only works on MRI Ruby 1.9+
-if is_mri_192_plus; then
+# without the extra load time of rubygems.
+if is_mri; then
   export RUBYOPT="--disable=gem"
 fi
 
