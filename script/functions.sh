@@ -53,18 +53,11 @@ function run_cukes {
 
     echo "${PWD}/bin/cucumber"
 
-    if is_jruby; then
-      # For some reason JRuby doesn't like our improved bundler setup
-      RUBYOPT="-I${PWD}/../bundle -rbundler/setup" \
-         PATH="${PWD}/bin:$PATH" \
-         bin/cucumber --strict
-    else
-      # Prepare RUBYOPT for scenarios that are shelling out to ruby,
-      # and PATH for those that are using `rspec` or `rake`.
-      RUBYOPT="${RUBYOPT} -I${PWD}/../bundle -rbundler/setup" \
-         PATH="${PWD}/bin:$PATH" \
-         bin/cucumber --strict
-    fi
+    # Prepare RUBYOPT for scenarios that are shelling out to ruby,
+    # and PATH for those that are using `rspec` or `rake`.
+    RUBYOPT="${RUBYOPT} -I${PWD}/../bundle -rbundler/setup" \
+       PATH="${PWD}/bin:$PATH" \
+       bin/cucumber --strict
   fi
 }
 
