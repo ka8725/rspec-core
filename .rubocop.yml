@@ -83,6 +83,9 @@ Style/ClassAndModuleChildren:
     - lib/rspec/core/option_parser.rb
     - lib/rspec/core/reporter.rb
 
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
 Style/RaiseArgs:
   Exclude:
     - lib/rspec/core/configuration.rb
@@ -108,3 +111,10 @@ Performance/Caller:
 
 Metrics/BlockLength:
   Max: 193
+
+# TODO: Reconsider this in the future
+Performance/UnfreezeString:
+  Enabled: false
+
+Style/SafeNavigation:
+  Enabled: false
