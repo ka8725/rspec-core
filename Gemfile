@@ -28,14 +28,10 @@ end
 
 gem "jruby-openssl", platforms: :jruby
 
-gem 'simplecov', '~> 0.8'
-
 # No need to run rubocop on earlier versions
 if RUBY_VERSION >= '2.4' && RUBY_ENGINE == 'ruby'
   gem "rubocop", "~> 0.52.1"
 end
-
-gem 'test-unit', '~> 3.0'
 
 # Version 5.12 of minitest requires Ruby 2.4
 if RUBY_VERSION < '2.4.0'
